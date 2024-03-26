@@ -1,0 +1,15 @@
+import torch
+import torch.nn as nn
+input_layer = torch.rand(4)
+weight_1 = torch.rand(4, 4)
+weight_2 = torch.rand(4, 4)
+weight_3 = torch.rand(4, 4)
+
+hidden_1 = torch.matmul(input_layer, weight_1)
+hidden_2 = torch.matmul(hidden_1, weight_2)
+
+print(torch.matmul(hidden_2, weight_3))
+
+weight_composed_1 = torch.matmul(weight_1, weight_2)
+weight = torch.matmul(weight_composed_1, weight_3)
+print(torch.matmul(input_layer, weight))
